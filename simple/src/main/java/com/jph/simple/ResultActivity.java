@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.jph.takephoto.model.TImage;
@@ -44,11 +45,16 @@ public class ResultActivity extends Activity {
         showImg();
     }
     private void showImg() {
+        Toast.makeText(this, "显示照片", Toast.LENGTH_SHORT).show();
+
+
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.llImages);
         for (int i = 0, j = images.size(); i < j - 1; i += 2) {
             View view = LayoutInflater.from(this).inflate(R.layout.image_show, null);
             ImageView imageView1 = (ImageView) view.findViewById(R.id.imgShow1);
             ImageView imageView2 = (ImageView) view.findViewById(R.id.imgShow2);
+            String path = images.get(i).getPath();
+            Toast.makeText(this, path, Toast.LENGTH_SHORT).show();
             Glide.with(this).load(new File(images.get(i).getPath())).into(imageView1);
             Glide.with(this).load(new File(images.get(i + 1).getPath())).into(imageView2);
             linearLayout.addView(view);

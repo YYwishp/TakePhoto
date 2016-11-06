@@ -1,7 +1,7 @@
 package com.jph.takephoto.compress;
 
 import android.content.Context;
-import com.jph.takephoto.model.LubanOptions;
+import com.jph.takephoto.model.LuBanOptions;
 import com.jph.takephoto.model.TImage;
 
 import java.io.File;
@@ -25,11 +25,11 @@ public class CompressWithLuBan implements CompressImage {
     private ArrayList<TImage> images;
     private CompressListener listener;
     private Context context;
-    private LubanOptions options;
+    private LuBanOptions options;
     private ArrayList<File> files = new ArrayList<>();
 
     public CompressWithLuBan(Context context, CompressConfig config, ArrayList<TImage> images, CompressListener listener) {
-        options=config.getLubanOptions();
+        options=config.getLuBanOptions();
         this.images = images;
         this.listener = listener;
         this.context = context;

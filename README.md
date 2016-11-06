@@ -391,7 +391,7 @@ takePhoto.onEnableCompress(config,showProgressBar);
 
 #### 使用Luban进行压缩： 
 ```
-LubanOptions option=new LubanOptions.Builder()
+LuBanOptions option=new LuBanOptions.Builder()
                     .setGear(Luban.CUSTOM_GEAR)
                     .setMaxHeight(height)
                     .setMaxWidth(width)
